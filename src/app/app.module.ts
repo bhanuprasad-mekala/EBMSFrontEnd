@@ -9,13 +9,16 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CalculateBillComponent } from './calculate-bill/calculate-bill.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    CalculateBillComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

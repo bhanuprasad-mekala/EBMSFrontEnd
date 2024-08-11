@@ -27,6 +27,7 @@
       "id": "B0001",
       "custId": 1001,
       "monthName": "May",
+      "year": 2024,
       "noOfUnits": 100,
       "amount": 0
     },
@@ -34,15 +35,41 @@
       "id": "B0002",
       "custId": 1002,
       "monthName": "May",
+      "year": 2024,
       "noOfUnits": 125,
-      "amount": 540
+      "amount": 5
     },
     {
       "id": "B0003",
       "custId": 1001,
       "monthName": "June",
+      "year": 2024,
       "noOfUnits": 248,
       "amount": 1116
+    },
+    {
+      "id": "B0004",
+      "custId": "1003",
+      "month": "May",
+      "year": 2024,
+      "noOfUnits": "143",
+      "amount": 643.5
+    },
+    {
+      "id": "B0005",
+      "custId": "1002",
+      "month": "June",
+      "year": 2024,
+      "noOfUnits": "203",
+      "amount": 913.5
+    },
+    {
+      "id": "B0006",
+      "custId": "1003",
+      "month": "June",
+      "year": 2024,
+      "noOfUnits": "100",
+      "amount": 0
     }
   ]
 }
