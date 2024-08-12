@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer No</th>
+            <th>Customer Name</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Pin Code</th>
+            <th>Month Name</th>
+            <th>No. of unit</th>
+            <th>Bill Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bill of bills">
+            <td>{{bill.CustomerNo}}</td>
+            <td>{{bill.CustomerName}}</td>
+            <td>{{bill.DOB}}</td>
+            <td>{{bill.Address}}</td>
+            <td>{{bill.PinCode}}</td>
+            <td>{{bill.Month}}</td>
+            <td>{{bill.Noofunit}}</td>
+            <td>{{bill.Amount}}</td>
+        </tr>
+    </tbody>
+</table>
