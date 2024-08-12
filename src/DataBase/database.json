@@ -26,7 +26,7 @@
     {
       "id": "B0001",
       "custId": 1001,
-      "monthName": "May",
+      "month": "May",
       "year": 2024,
       "noOfUnits": 100,
       "amount": 0
@@ -34,15 +34,15 @@
     {
       "id": "B0002",
       "custId": 1002,
-      "monthName": "May",
+      "month": "May",
       "year": 2024,
       "noOfUnits": 125,
-      "amount": 5
+      "amount": 1000
     },
     {
       "id": "B0003",
       "custId": 1001,
-      "monthName": "June",
+      "month": "June",
       "year": 2024,
       "noOfUnits": 248,
       "amount": 1116

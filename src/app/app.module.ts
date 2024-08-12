@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CalculateBillComponent } from './calculate-bill/calculate-bill.component';
 import { DatePipe } from '@angular/common';
+import { ViewBillsComponent } from './view-bills/view-bills.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DatePipe } from '@angular/common';
     CustomersComponent,
     HeaderComponent,
     HomeComponent,
-    CalculateBillComponent
+    CalculateBillComponent,
+    ViewBillsComponent
   ],
   imports: [
     BrowserModule,
