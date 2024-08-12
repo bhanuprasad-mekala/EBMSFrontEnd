@@ -1,0 +1,36 @@
+<form [formGroup]="billForm">
+    <div class="mb-3">
+        <label for="id" class="form-label">Bill ID</label>
+        <input type="text" class="form-control" formControlName="id">
+    </div>
+    <div class="mb-3">
+        <label for="custId" class="form-label">Customer Name</label><br>
+        <select class="custom-select container-fluid" formControlName="custId">
+          <option value="">Select a Customer</option>
+          <option *ngFor="let customer of customers" [ngValue]="customer.id">{{customer.customerName}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="month" class="form-label">Month</label>
+        <select class="custom-select container-fluid" formControlName="month"> 
+            <option value="">Select Month</option>
+            <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
+          </select>
+    </div>
+    <div class="mb-3">
+        <label for="year" class="form-label">Year</label>
+        <select class="custom-select container-fluid" formControlName="year"> 
+            <option value="">Select Month</option>
+            <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
+          </select>
+    </div>
+    <div class="mb-3">
+        <label for="noOfUnits" class="form-label">Number of Units</label>
+        <input type="text" class="form-control" formControlName="noOfUnits" (blur)="totalAmount()">
+    </div>
+    <div class="mb-3">
+        <label for="amount" class="form-label">Total Amount</label>
+        <input type="text" class="form-control" formControlName="amount">
+    </div>
+</form>
+<button class="btn btn-success" (click)="saveBill()">Save Bill</button>

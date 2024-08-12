@@ -1,41 +1,75 @@
 {
-    "Customers": [
-        {
-            "id": 1001,
-            "customerName": "Bhanuprasad Mekala",
-            "DOB": "2000-05-24",
-            "adress":"17-4-252, Chandrashekarnagar, Godavarikhani",
-            "pincode":505209
-        },
-        {
-            "id": 1002,
-            "customerName": "Anusri Mekala",
-            "DOB": "2000-01-08",
-            "adress":"17-4-251, Chandrashekarnagar, Godavarikhani",
-            "pincode":505209
-        }
-    ],
-    "Bills": [
-        {
-            "id": "B0001",
-            "custId":1001,
-            "monthName":"May",
-            "noOfUnits":100,
-            "amount":0
-        },
-        {
-            "id": "B0002",
-            "custId":1002,
-            "monthName":"May",
-            "noOfUnits":125,
-            "amount":540
-        },
-        {
-            "id": "B0003",
-            "custId":1001,
-            "monthName":"June",
-            "noOfUnits":248,
-            "amount":1116
-        }
-    ]
+  "Customers": [
+    {
+      "id": "1001",
+      "customerName": "Bhanuprasad Mekala",
+      "DOB": "2000-05-24",
+      "adress": "17-4-252, Chandrashekarnagar, Godavarikhani",
+      "pincode": 505209
+    },
+    {
+      "id": "1002",
+      "customerName": "Anusri Mekala",
+      "DOB": "2000-01-08",
+      "adress": "17-4-251, Chandrashekarnagar, Godavarikhani",
+      "pincode": 505209
+    },
+    {
+      "id": "1003",
+      "customerName": "Nagur Babu",
+      "DOB": "1999-03-16",
+      "adress": "Flat No: 301, A28, Singapore Township, Hyderabad",
+      "pincode": "500088"
+    }
+  ],
+  "Bills": [
+    {
+      "id": "B0001",
+      "custId": 1001,
+      "month": "May",
+      "year": 2024,
+      "noOfUnits": 100,
+      "amount": 0
+    },
+    {
+      "id": "B0002",
+      "custId": 1002,
+      "month": "May",
+      "year": 2024,
+      "noOfUnits": 125,
+      "amount": 1000
+    },
+    {
+      "id": "B0003",
+      "custId": 1001,
+      "month": "June",
+      "year": 2024,
+      "noOfUnits": 248,
+      "amount": 1116
+    },
+    {
+      "id": "B0004",
+      "custId": "1003",
+      "month": "May",
+      "year": 2024,
+      "noOfUnits": "143",
+      "amount": 643.5
+    },
+    {
+      "id": "B0005",
+      "custId": "1002",
+      "month": "June",
+      "year": 2024,
+      "noOfUnits": "203",
+      "amount": 913.5
+    },
+    {
+      "id": "B0006",
+      "custId": "1003",
+      "month": "June",
+      "year": 2024,
+      "noOfUnits": "100",
+      "amount": 0
+    }
+  ]
 }
