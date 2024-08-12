@@ -1,12 +1,13 @@
+<input type="text" class="m-2 w-50" (keyup)="filterData($event)" placeholder="Search for Customer Name, Customer ID or Month of Bill">
 <table class="table">
     <thead>
         <tr>
-            <th>Customer No</th>
-            <th>Customer Name</th>
+            <th (click)="sortData('custId')">Customer No</th>
+            <th (click)="sortData('custName')">Customer Name</th>
             <th>DOB</th>
             <th>Address</th>
-            <th>Pin Code</th>
-            <th>Month Name</th>
+            <th>Pincode</th>
+            <th (click)="sortData('month')">Month</th>
             <th>No. of unit</th>
             <th>Bill Amount</th>
         </tr>
