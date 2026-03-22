@@ -39,22 +39,17 @@ export class CalculateBillComponent implements OnInit {
   }
 
   getAllCustomers() {
-    this.http.get<Customer[]>(environment.appUrl + "Customers").subscribe(data => {
-      this.customers = data
-    })
+    this.customers = JSON.parse(localStorage.getItem("customers") || "[]");
   }
 
   getAllBills() {
-    this.http.get<Bill[]>(environment.appUrl + "Bills").subscribe(data => {
-      this.bills = data;
-      let id: string = "B";
-      let num = String(Number(this.bills[this.bills.length - 1].id.substring(1)) + 1)
-      for (let i = 1; i < this.bills[this.bills.length - 1].id.length - 1; i++) {
-        id += "0";
-      }
-      id += num;
-      this.billForm.get("id")?.setValue(id)
-    })
+    this.bills = JSON.parse(localStorage.getItem("bills") || "[]");
+    if (this.bills.length > 0) {
+      this.billForm.get("id")?.setValue('B' + (Number(this.bills[this.bills.length - 1].id.substring(1)) + 1));
+    }
+    else {
+      this.billForm.get("id")?.setValue('B1001');
+    }
   }
 
   getMonths() {
@@ -102,9 +97,10 @@ export class CalculateBillComponent implements OnInit {
 
   saveBill() {
     let data = this.billForm.getRawValue();
-    this.http.post(environment.appUrl + "Bills", data).subscribe(() => {
-      this.billForm.reset();
-      this.ngOnInit();
-    })
+    let bills = JSON.parse(localStorage.getItem("bills") || "[]");
+    bills.push(data);
+    localStorage.setItem("bills", JSON.stringify(bills));
+    this.billForm.reset();
+    this.getAllBills();
   }
 }

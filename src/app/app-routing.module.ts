@@ -11,7 +11,7 @@ const routes: Routes = [
     component:HomeComponent
   },
   {
-    path:"EBMSFrontEnd/customer",
+    path:"customer",
     component:CustomersComponent
   },
   {

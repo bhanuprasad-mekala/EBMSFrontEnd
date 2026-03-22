@@ -11,17 +11,17 @@
         </select>
     </div>
     <div class="mb-3">
+        <label for="year" class="form-label">Year</label>
+        <select class="custom-select container-fluid" formControlName="year"> 
+            <option value="">Select Year</option>
+            <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
+          </select>
+    </div>
+    <div class="mb-3">
         <label for="month" class="form-label">Month</label>
         <select class="custom-select container-fluid" formControlName="month"> 
             <option value="">Select Month</option>
             <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
-          </select>
-    </div>
-    <div class="mb-3">
-        <label for="year" class="form-label">Year</label>
-        <select class="custom-select container-fluid" formControlName="year"> 
-            <option value="">Select Month</option>
-            <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
           </select>
     </div>
     <div class="mb-3">

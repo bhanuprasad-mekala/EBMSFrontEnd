@@ -22,20 +22,19 @@ export class ViewBillsComponent implements OnInit {
   }
 
   getCustomers() {
-    this.http.get<Customer[]>(environment.appUrl + "Customers").subscribe(data => {
-      for (let i = 0; i < this.bills.length; i++) {
-        let obj: Customer[] = data.filter(cust => cust.id == this.bills[i].CustomerNo);
+    let data = JSON.parse(localStorage.getItem("customers") || "[]");
+    for (let i = 0; i < this.bills.length; i++) {
+        let obj: Customer[] = data.filter((cust: Customer) => cust.id == this.bills[i].CustomerNo);
         this.bills[i].CustomerName = obj[0].customerName
         this.bills[i].Address = obj[0].adress
         this.bills[i].DOB = obj[0].DOB
         this.bills[i].PinCode = obj[0].pincode
       }
-    })
   }
 
   getBills() {
-    this.http.get<Bill[]>(environment.appUrl + "Bills").subscribe(data => {
-      for (let i = 0; i < data.length; i++) {
+    let data = JSON.parse(localStorage.getItem("bills") || "[]");
+    for (let i = 0; i < data.length; i++) {
         let obj: ViewBill = {
           CustomerNo: data[i].custId,
           CustomerName: "",
@@ -49,7 +48,6 @@ export class ViewBillsComponent implements OnInit {
         }
         this.bills[i] = obj;
       }
-    })
   }
 
   sortData(column: any) {

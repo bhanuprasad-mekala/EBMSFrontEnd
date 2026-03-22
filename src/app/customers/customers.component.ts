@@ -30,15 +30,14 @@ export class CustomersComponent implements OnInit {
   }
 
   getAllCustomers() {
-    this.http.get<Customer[]>(environment.appUrl + "Customers").subscribe(data => {
-      this.customers = data
-    })
+    this.customers = JSON.parse(localStorage.getItem("customers") || "[]");
   }
 
   deleteCustomer(id: any) {
-    this.http.delete(environment.appUrl + "Customers/" + id).subscribe((data) => {
-      this.getAllCustomers();
-    })
+    let customers = JSON.parse(localStorage.getItem("customers") || "[]");
+    customers = customers.filter((customer: Customer) => customer.id != id);
+    localStorage.setItem("customers", JSON.stringify(customers));
+    this.getAllCustomers();
   }
 
   customerIdGenertor(){
@@ -53,10 +52,11 @@ export class CustomersComponent implements OnInit {
       adress:this.customerForm.getRawValue().address,
       pincode:this.customerForm.getRawValue().pincode
     }
-    this.http.post<Customer>(environment.appUrl+"Customers",customer).subscribe(data=>{
-      console.log("Customer added successfully with ID : "+customer.id)
-      this.getAllCustomers();
-    })
+    let customeers = JSON.parse(localStorage.getItem("customers") || "[]");
+    customeers.push(customer);
+    localStorage.setItem("customers",JSON.stringify(customeers));
+    this.customerForm.reset();
+    this.getAllCustomers();
   }
 
   resetForm(){
