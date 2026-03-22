@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ebms",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -34,6 +34,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/EBMSFrontEnd/",
               "budgets": [
                 {
                   "type": "initial",
@@ -102,7 +103,11 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "remote": "origin",
+            "dir": "docs/browser"
+          }
         }
       }
     }
